@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css">
+
+  <style>
+    body { margin:0; }
+    img { width:100%; height:auto; }
+  </style>
+</head>
+
+<body>
+
+<div class="reveal">
+  <div class="slides" id="slidesContainer"></div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+
+<script>
+  let totalSlides = 28; // 👈 your last slide number
+
+  let container = document.getElementById("slidesContainer");
+
+  for (let i = 1; i <= totalSlides; i++) {
+    let section = document.createElement("section");
+    section.innerHTML = `<img src="Slide${i}.GIF">`;
+    container.appendChild(section);
+  }
+
+  Reveal.initialize({
+    controls: true,
+    progress: true,
+    slideNumber: true
+  });
+</script>
+
+</body>
+</html>
