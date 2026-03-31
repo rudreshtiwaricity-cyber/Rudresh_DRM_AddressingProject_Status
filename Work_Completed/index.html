@@ -3,52 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>My Presentation</title>
+<title>Presentation</title>
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  #slide-container {
-    max-width: 100%;
-    max-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  img {
-    max-width: 100%;
-    max-height: 80vh;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  }
-  #controls {
-    margin: 20px;
-  }
-  button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: #0078d7;
-    color: white;
-    cursor: pointer;
-  }
-  button:hover {
-    background-color: #005a9e;
-  }
-  #branding {
-    margin-top: 10px;
-    font-size: 14px;
-    color: #555;
-  }
+  body { margin:0; font-family:Arial,sans-serif; background:#f4f4f4; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  #slide-container { max-width:100%; max-height:100vh; display:flex; align-items:center; justify-content:center; margin-top:20px; }
+  img { max-width:100%; max-height:80vh; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.2); }
+  #controls { margin:20px; }
+  button { padding:10px 20px; margin:0 10px; font-size:16px; border:none; border-radius:5px; background-color:#0078d7; color:white; cursor:pointer; }
+  button:hover { background-color:#005a9e; }
+  #branding { margin-top:10px; font-size:14px; color:#555; }
 </style>
 </head>
 <body>
@@ -56,7 +19,7 @@
 <h1>My Presentation</h1>
 
 <div id="slide-container">
-  <img id="slide" src="Slide1.GIF" alt="Slide 1">
+  <img id="slide" src="" alt="Slide">
 </div>
 
 <div id="controls">
@@ -64,16 +27,15 @@
   <button onclick="nextSlide()">Next</button>
 </div>
 
-<div id="branding">
-  © 2026 Your Company Name
-</div>
+<div id="branding">© 2026 Your Company Name</div>
 
 <script>
+  // Add your GIF filenames here
   const slides = [
     "Slide1.GIF",
     "Slide2.GIF",
     "Slide3.GIF"
-    // Add all your slide GIF filenames here
+    // Add all slides here
   ];
 
   let currentSlide = 0;
@@ -86,13 +48,11 @@
     slideElement.src = slides[currentSlide];
   }
 
-  function nextSlide() {
-    showSlide(currentSlide + 1);
-  }
+  function nextSlide() { showSlide(currentSlide + 1); }
+  function prevSlide() { showSlide(currentSlide - 1); }
 
-  function prevSlide() {
-    showSlide(currentSlide - 1);
-  }
+  // Show first slide on load
+  showSlide(0);
 </script>
 
 </body>
